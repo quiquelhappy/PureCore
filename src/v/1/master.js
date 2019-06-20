@@ -73,12 +73,9 @@ function headerChart() {
 
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
+    
+    $.post("https://purecore.io/api/v/1/login/google", { id_token: id_token }).done(function (data) {
+        alert("Data Loaded: " + data);
+    });
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://purecore.io/api/v/1/login/google');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onload = function () {
-        console.log('Signed in as: ' + xhr.responseText);
-    };
-    xhr.send('id_token=' + id_token);
 }
