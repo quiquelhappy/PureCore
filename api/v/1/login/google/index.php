@@ -14,7 +14,17 @@ if(isset($id_token)){
     $payload = $client->verifyIdToken($id_token);
     if ($payload) {
       // $userid = $payload['sub'];
-      print(json_encode($payload));
+
+      include_once '../../../../../api/lib/database/connection.php';
+      include_once '../../../../../api/lib/owner/update.php';
+
+      $email=$payload["email"];
+      $given_name=$payload["given_name"];
+      $family_name=$payload["family_name"];
+
+      $id=updateOwner($email,$given_name,$family_name);
+
+      print(json_encode(array("id"=>$id,"email"=>$email,"given_name"=>$given_name,"family_name"=>$family_name)));
     } else {
       print(json_encode(array("error"=>"invalid token")));
     }
