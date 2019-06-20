@@ -16,7 +16,9 @@ function updateOwner($email, $name, $surname)
     if (empty($data)) {
         // register acc
 
-        $id=openssl_random_pseudo_bytes(16);
+        $hash=$hash = bin2hex(random_bytes(32));
+        $id=$hash = bin2hex(random_bytes(8));
+        
         return $id;
 
     } else {
