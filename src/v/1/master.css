@@ -1,0 +1,65 @@
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Material+Icons|Product+Sans&display=swap');
+/* DEFAULTS */
+
+body {
+    font-family: 'Product Sans', sans-serif;
+}
+
+.code {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.accent {
+    background-color: #FF7B51;
+}
+
+.light {
+    background-color: #FFF1ED;
+    color: #FF7B51;
+}
+
+/* UTILS */
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hidden {
+    display: none;
+    width: 0px;
+    height: 0;
+    overflow: hidden;
+}
+
+.underline {
+    border-bottom-width: 2px;
+    border-style: dashed;
+    border-left-style: none;
+    border-top-style: none;
+    border-right-style: none;
+    border-color: #FF7B51;
+}
+
+.border {
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FF7B51;
+}
+
+/* CONTAINERS */
+
+.login-popup{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 99;
+}
+
+/* TO-DO */

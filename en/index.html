@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- CHEAD -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="../src/v/1/master.css">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- SHEAD -->
+    <title>Pure Core. Payments, stats and much more for your Minecraft™ server</title>
+</head>
+
+<body class="white">
+
+    <div class="navbar-fixed">
+        <nav class="accent">
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo">Pure Core</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#plugins">Plugins</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="https://purecore.io/en/dashboard">Dashboard</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div style="position: relative; width: 100%; height: 500px">
+        <div class="hide-on-small-only"
+            style="position: absolute; top: 0px; width: 100%; height: 100%; overflow: hidden">
+            <div class="white"
+                style="width: 100%; height: 100%; transform: scale(1.2); margin-right: 20px; margin-top: 20px"
+                id="header_chart">
+
+            </div>
+        </div>
+        <div style="position: absolute; top: 0px; width: 100%; height: 100%;">
+            <div class="container">
+                <div class="row flex" style="margin: 0px">
+                    <div class="col s12 m6">
+                        <div class="valign-wrapper" style="height: 500px; width: 100%;">
+                            <div class="valign" style="width: 100%">
+                                <center>
+                                    <p
+                                        style="font-weight: 700; font-size: 400%; color: black; margin: 0px; text-align: left;">
+                                        Pure Core
+                                    </p>
+                                    <p class="black-text" style="text-align: left; margin: 0px; font-size: 150%;">
+                                        The all-in-one Minecraft™ solution for servers and communities
+                                    </p>
+                                    <p class="black left white-text"
+                                        style="display: inline-block; padding: 10px; border-radius: 4px;">
+                                        <span class="loggedout">
+                                            Setup an account now
+                                        </span>
+                                        <span class="loggedin hidden">
+                                            Go to your dashboard
+                                        </span>
+                                    </p>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" class="col s0 m6 hide-on-small-only">
+                        <div class="valign-wrapper" style="height: 500px; width: 100%;">
+                            <div class="valign" style="width: 100%">
+                                <center>
+                                    <div class="border light black-text code"
+                                        style="padding: 25px; font-size: 150%; border-radius: 10px; font-weight: 700; max-width: 200px; text-align: left">
+                                        payments<br>
+                                        profiles<br>
+                                        stats<br>
+                                        +<br>
+                                    </div>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accent" style="width: 100%; padding-top: 20px; padding-bottom: 20px;">
+        <div data-aos="fade-in" class="container">
+            <div class="valign-wrapper" style="width: 100%; height: 100%;">
+                <div class="valign" style="width: 100%;">
+                    <center>
+                        <p style="font-size: 150%; color: white;">
+                            <span id="account_count">X</span> players registered in our database and <span
+                                id="payments_count">X</span> payments processed!
+                        </p>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="services" data-aos="fade-up" class="container">
+        <div style="margin-top: 40px; margin-bottom: 40px;">
+            <center>
+                <span class="code black-text underline" style="font-weight: 700; font-size: 200%;">
+                    the perfect all-in-one solution
+                </span>
+            </center>
+        </div>
+
+        <div>
+
+            <!-- PAYMENTS INFO -->
+
+            <div data-aos="fade-in" class="row flex">
+                <div class="col m4 s12">
+                    <div class="valign-wrapper" style="height: 100%; width: 100%;">
+                        <div class="valign" style="width: 100%">
+                            <center>
+                                <i class="material-icons" style="font-size: 600%">
+                                    credit_card
+                                </i>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m8 s12">
+                    <p class="code black-text" style="font-weight: 600; font-size: 150%; margin: 0px;">
+                        Payments
+                    </p>
+                    <p class="black-text">
+                        // TO-DO TRANSLATE
+                        Las redirecciones no funcionan bien. Cuando se redirige a un cliente durante el proceso
+                        de
+                        pago pueden perderse por el camino. Nuestros servicios unicamente emplean las
+                        herramientas
+                        más actualizadas y a diferencia del resto de servicios, los pagos se realizan sin salir
+                        de
+                        la página en ningún momento utilizando Stripe o Paypal Express checkout. Cuando el
+                        usuario
+                        selecciona un producto, su nombre se selecciona automaticamente en base a la sesión del
+                        juego (usando su IP) y solo tienen que dar click a pagar. Nada más. Menos pasos = más
+                        clientes.
+                    </p>
+                </div>
+            </div>
+
+            <!-- PROFILES INFO -->
+
+            <div data-aos="fade-in" class="row flex">
+                <div class="col m4 s12">
+                    <div class="valign-wrapper" style="height: 100%; width: 100%;">
+                        <div class="valign" style="width: 100%">
+                            <center>
+                                <i class="material-icons" style="font-size: 600%">
+                                    people_outline
+                                </i>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m8 s12">
+                    <p class="code black-text" style="font-weight: 600; font-size: 150%; margin: 0px;">
+                        Profiles & Sessions
+                    </p>
+                    <p class="black-text">
+                        // TO-DO TRANSLATE
+                        Cuando los jugadores se unen a tu comunidad, se registran automaticamente y se crea un
+                        perfil. Ofrecemos una API muy robusta para desarolladores y nuestro sistema global te
+                        permite saber en que otros servidores juegan tus usuarios y les ofrece grandes ventajas
+                        como iniciar sesión en tu pagina web automaticamente, así como pagar directamente sin
+                        tener que rellenar datos absurdos. Cuanto más facil mejor para todos.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STATS INFO -->
+
+            <div data-aos="fade-in" class="row flex">
+                <div class="col m4 s12">
+                    <div class="valign-wrapper" style="height: 100%; width: 100%;">
+                        <div class="valign" style="width: 100%">
+                            <center>
+                                <i class="material-icons" style="font-size: 600%">
+                                    pie_chart_outlined
+                                </i>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m8 s12">
+                    <p class="code black-text" style="font-weight: 600; font-size: 150%; margin: 0px;">
+                        Statistics
+                    </p>
+                    <p class="black-text">
+                        // TO-DO TRANSLATE
+                        Nuestro sistema de perfiles te permite ver las estadísticas de los jugadores de un
+                        vistazo, así como ver estadísticas de la salud de tu servidor. Podrás ver todo lo que te
+                        sea útil. Desde rendimiento por horas, tasa de crecimiento y los paises y estados mas
+                        relevantes entre los jugadores. Podrás añadir estadísticas personalizadas y mucho más
+                        graias a nuestr API de perfiles!
+                    </p>
+                </div>
+            </div>
+
+            <!-- STATS INFO -->
+
+            <div data-aos="fade-in" class="row flex">
+                <div class="col m4 s12">
+                    <div class="valign-wrapper" style="height: 100%; width: 100%;">
+                        <div class="valign" style="width: 100%">
+                            <center>
+                                <i class="material-icons" style="font-size: 600%">
+                                    code
+                                </i>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m8 s12">
+                    <p class="code black-text" style="font-weight: 600; font-size: 150%; margin: 0px;">
+                        API
+                    </p>
+                    <p class="black-text">
+                        // TO-DO TRANSLATE
+                        Las posibilidades solo tienen limites en tu imaginación. Nuestra API te permitirá crear
+                        servicios complementarios. Quieres algo? Ves a por ello. La mayoría de nuestros proyectos son
+                        open-source.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accent" style="width: 100%; padding-top: 20px; padding-bottom: 20px;">
+        <div class="container">
+            <div class="valign-wrapper" style="width: 100%; height: 100%;">
+                <div class="valign" style="width: 100%;">
+                    <center>
+                        <p style="font-size: 150%; color: white;">
+                            Trusted by <span id="server_count">X</span> servers. We don't store payment details, just
+                            anonymized data for your server analytics.
+                        </p>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="light" style="width: 100%; padding-top: 20px; padding-bottom: 20px;">
+        <div data-aos="fade-in" class="container">
+            <div class="valign-wrapper" style="width: 100%; height: 100%;">
+                <div class="valign" style="width: 100%;">
+                    <center>
+                        <p style="font-size: 150%; text-align: left; color: black">
+                            Hey, I know magic isn't real... How did I login automatically? Are you storing my IP?<br>
+                        </p>
+                        <p style="font-size: 150%; text-align: left;">
+                            We are storing random characters that represent your IP. Your IP isn't actually stored. We
+                            use multiple encryption systems and nobody (not even us) can see your IP!
+                        </p>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="plugins" data-aos="fade-up" class="container">
+        <div style="margin-top: 40px; margin-bottom: 40px;">
+            <center>
+                <span class="code black-text underline" style="font-weight: 700; font-size: 200%;">
+                    the plugins
+                </span>
+                <p class="black-text">
+                    Our system is extremly modular, yet fast. You don't want a feature? Okay, then just don't install
+                    it!<br>
+                    All our plugins combined don't weight more than 200kb.
+                    We use async methods in order to reduce server lag and we are always updating our plugins. Do you
+                    want
+                    to help us? Nice! Those are open source too!
+                </p>
+            </center>
+        </div>
+
+        <div class="row">
+
+            <!-- CORE INFO -->
+
+            <div class="col m4 s12" style="margin-top: 10px; margin-bottom: 40px;">
+                <p class="code black-text" style="font-weight: 600; font-size: 150%; margin: 0px;">
+                    Core
+                </p>
+                <p class="black-text">
+                    Sync your server with our service. This allows us to create user profiles for your players and
+                    register your server in our database.
+                </p>
+                <span class="black white-text"
+                    style="padding: 5px; border-radius: 2px; margin-right: 5px">BUNGEECORD</span>
+                <span class="black white-text" style="padding: 5px; border-radius: 2px; margin-right: 5px">SPIGOT</span>
+            </div>
+
+            <div class="col m4 s12" style="margin-top: 10px; margin-bottom: 40px;">
+                <p class="code black-text" style="font-weight: 600; font-size: 150%; margin: 0px;">
+                    Payments
+                </p>
+                <p class="black-text">
+                    Sync your store with your server!
+                </p>
+                <span class="black white-text"
+                    style="padding: 5px; border-radius: 2px; margin-right: 5px">BUNGEECORD</span>
+                <span class="black white-text" style="padding: 5px; border-radius: 2px; margin-right: 5px">SPIGOT</span>
+            </div>
+
+            <div class="col m4 s12" style="margin-top: 10px; margin-bottom: 40px;">
+                <p class="code black-text" style="font-weight: 600; font-size: 150%; margin: 0px;">
+                    Stats
+                </p>
+                <p class="black-text">
+                    Player advancements, vanilla analytics and server health & growth reports
+                </p>
+                <span class="black white-text" style="padding: 5px; border-radius: 2px; margin-right: 5px">SPIGOT</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="accent" style="width: 100%; padding-top: 20px; padding-bottom: 20px;">
+        <div data-aos="fade-in" class="container">
+            <div class="valign-wrapper" style="width: 100%; height: 100%;">
+                <div class="valign" style="width: 100%;">
+                    <center>
+                        <p style="font-size: 150%; color: white;">
+                            Happiness is not expensive
+                        </p>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="plans" data-aos="fade-up" class="container">
+        <div style="margin-top: 40px; margin-bottom: 40px;">
+            <center>
+                <span class="code black-text underline" style="font-weight: 700; font-size: 200%;">
+                    plans
+                </span>
+            </center>
+        </div>
+
+        <div class="row flex">
+            <div class="col s12 m4" style="margin-bottom: 20px;">
+                <div class="border" style="overflow: hidden; height: 100%">
+                    <div class="light" style="width: 100%; padding: 20px;">
+                        <center>
+                            <span class="" style="font-weight: 700; font-size: 200%">Free!</span>
+                        </center>
+                    </div>
+                    <div style="padding-left: 15px; padding-right: 15px; color: black; font-size: 125%;">
+
+                        <center>
+                            <p class="underline" style="font-weight: 600">
+                                Core
+                            </p>
+                        </center>
+                        <ul class="faturelist">
+                            <li>2 Instances</li>
+                            <li>Instant profile creation</li>
+                            <li>Instant login service</li>
+                        </ul>
+
+                        <center>
+                            <p class="underline" style="font-weight: 600">
+                                Payments
+                            </p>
+                        </center>
+                        <ul class="faturelist">
+                            <li>Ads or payment rates</li>
+                            <li>150€ transaction limit (monthly)</li>
+                            <li>Unlimited packages</li>
+                            <li>Unlimited categories</li>
+                            <li>Stripe (credit/debit card and iDEAL)</li>
+                            <li>Multiple themes</li>
+                            <li>Custom domain</li>
+                        </ul>
+
+                        <center>
+                            <p class="underline" style="font-weight: 600">
+                                Stats
+                            </p>
+                        </center>
+                        <ul class="faturelist">
+                            <li>Player advancements</li>
+                            <li>Vanilla stats</li>
+                            <li>Player coarse location</li>
+                            <li>Health report every 30 min.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m4" style="margin-bottom: 20px;">
+                <div class="border" style="overflow: hidden; height: 100%">
+                    <div class="light" style="width: 100%; padding: 20px;">
+                        <center>
+                            <span class="" style="font-weight: 700; font-size: 200%">15€ / mo</span>
+                        </center>
+                    </div>
+                    <div style="padding-left: 15px; padding-right: 15px; color: black; font-size: 125%;">
+
+                        <center>
+                            <p class="underline" style="font-weight: 600">
+                                Core
+                            </p>
+                        </center>
+                        <ul class="faturelist">
+                            <li>5 Instances</li>
+                            <li>Instant profile creation</li>
+                            <li>Instant login service</li>
+                        </ul>
+
+                        <center>
+                            <p class="underline" style="font-weight: 600">
+                                Payments
+                            </p>
+                        </center>
+                        <ul class="faturelist">
+                            <li style="text-decoration: line-through">Ads or payment rates</li>
+                            <li>400€ transaction limit (monthly)</li>
+                            <li>Unlimited packages</li>
+                            <li>Unlimited categories</li>
+                            <li>Stripe (credit/debit card and iDEAL)</li>
+                            <li>PayPal Express Checkout</li>
+                            <li>Multiple themes</li>
+                            <li>Custom domain</li>
+                        </ul>
+
+                        <center>
+                            <p class="underline" style="font-weight: 600">
+                                Stats
+                            </p>
+                        </center>
+                        <ul class="faturelist">
+                            <li>Player advancements</li>
+                            <li>Vanilla stats</li>
+                            <li>Player coarse location</li>
+                            <li>Health report every 10 min.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m4" style="margin-bottom: 20px;">
+                <div class="border" style="overflow: hidden; height: 100%">
+                    <div class="light" style="width: 100%; padding: 20px;">
+                        <center>
+                            <span class="" style="font-weight: 700; font-size: 200%">20€ / mo</span>
+                        </center>
+                    </div>
+                    <div style="padding-left: 15px; padding-right: 15px; color: black; font-size: 125%;">
+
+                        <center>
+                            <p class="underline" style="font-weight: 600">
+                                Core
+                            </p>
+                        </center>
+                        <ul class="faturelist">
+                            <li>10 Instances</li>
+                            <li>Instant profile creation</li>
+                            <li>Instant login service</li>
+                        </ul>
+
+                        <center>
+                            <p class="underline" style="font-weight: 600">
+                                Payments
+                            </p>
+                        </center>
+                        <ul class="faturelist">
+                            <li style="text-decoration: line-through">Ads or payment rates</li>
+                            <li style="text-decoration: line-through">Transaction limit (monthly)</li>
+                            <li>Unlimited packages</li>
+                            <li>Unlimited categories</li>
+                            <li>Stripe (credit/debit card and iDEAL)</li>
+                            <li>PayPal Express Checkout</li>
+                            <li>Multiple themes</li>
+                            <li>Custom domain</li>
+                        </ul>
+
+                        <center>
+                            <p class="underline" style="font-weight: 600">
+                                Stats
+                            </p>
+                        </center>
+                        <ul class="faturelist">
+                            <li>Player advancements</li>
+                            <li>Vanilla stats</li>
+                            <li>Player coarse location</li>
+                            <li>Health report every 5 min.</li>
+                            <li>Server growth analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div style="margin-top: 40px; margin-bottom: 40px;">
+            <center>
+                <span class="code black-text underline" style="font-weight: 700; font-size: 200%;">
+                    pro plans
+                </span>
+            </center>
+        </div>
+
+        <div class="row">
+            <div class="col s12" style="margin-bottom: 20px;">
+                <div class="border" style="overflow: hidden">
+                    <div class="light" style="width: 100%; padding: 20px;">
+                        <center>
+                            <span class="" style="font-weight: 700; font-size: 200%">25€ / mo</span>
+                        </center>
+                    </div>
+                    <div style="padding-left: 15px; padding-right: 15px; color: black; font-size: 125%;">
+
+                        <center>
+                            <p class="underline" style="font-weight: 600">
+                                Core
+                            </p>
+                        </center>
+                        <ul class="faturelist">
+                            <li>Unlimited Instances</li>
+                            <li>Instant profile creation</li>
+                            <li>Instant login service</li>
+                        </ul>
+
+                        <center>
+                            <p class="underline" style="font-weight: 600">
+                                Payments
+                            </p>
+                        </center>
+                        <ul class="faturelist">
+                            <li style="text-decoration: line-through">Ads or payment rates</li>
+                            <li style="text-decoration: line-through">Transaction limit (monthly)</li>
+                            <li>Unlimited packages</li>
+                            <li>Unlimited categories</li>
+                            <li>Stripe (credit/debit card and iDEAL)</li>
+                            <li>PayPal Express Checkout</li>
+                            <li>Multiple themes</li>
+                            <li>Custom domain</li>
+                        </ul>
+
+                        <center>
+                            <p class="underline" style="font-weight: 600">
+                                Stats
+                            </p>
+                        </center>
+                        <ul class="faturelist">
+                            <li>Player advancements</li>
+                            <li>Vanilla stats</li>
+                            <li>Player coarse location</li>
+                            <li>Health report every 5 min.</li>
+                            <li>Server growth analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="page-footer accent">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Pure Core</h5>
+                    <p class="grey-text text-lighten-4">The all-in-one solution for your Minecraft™ server.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/quiquelhappy">GitHub</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://purecore.io/docs">Docs</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://purecore.io/help">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2019 Pure Core
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- CJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.6.12/apexcharts.min.js"></script>
+    <script src="../src/v/1/master.js"></script>
+
+    <!-- EJS -->
+    <script>
+        headerChart()
+    </script>
+</body>
+
+</html>

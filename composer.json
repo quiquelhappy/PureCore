@@ -1,0 +1,14 @@
+{
+    "name": "purecore/server",
+    "description": "purecore server",
+    "type": "project",
+    "require": {
+        "google/apiclient": "^2.2"
+    },
+    "authors": [
+        {
+            "name": "quiquelhappy",
+            "email": "quiquelhappy@gmail.com"
+        }
+    ]
+}
