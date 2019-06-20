@@ -22,11 +22,12 @@ if(isset($id_token)){
       $given_name=$payload["given_name"];
       $family_name=$payload["family_name"];
 
-      print_r(json_encode($payload));
+      print(json_encode(array("email"=>$email,"given_name"=>$given_name,"family_name"=>$family_name)));
 
-      $id=updateOwner($email,$given_name,$family_name);
+      //print_r(json_encode($payload));
 
-      //print(json_encode(array("id"=>$id,"email"=>$email,"given_name"=>$given_name,"family_name"=>$family_name)));
+      //$id=updateOwner($email,$given_name,$family_name);
+
     } else {
       print(json_encode(array("error"=>"invalid token")));
     }
