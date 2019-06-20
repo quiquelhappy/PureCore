@@ -36,7 +36,7 @@ function headerChart() {
                 show: false,
             }
         },
-        colors:['#FF7B51', '#FF9F80'],
+        colors: ['#FF7B51', '#FF9F80'],
         fill: {
             type: 'gradient',
             gradient: {
@@ -67,4 +67,18 @@ function headerChart() {
     );
 
     chart.render();
+}
+
+// login
+
+function onSignIn(googleUser) {
+    var id_token = googleUser.getAuthResponse().id_token;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://purecore.io/api/v/1/login/google');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function () {
+        console.log('Signed in as: ' + xhr.responseText);
+    };
+    xhr.send('id_token=' + id_token);
 }
