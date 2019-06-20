@@ -1,6 +1,6 @@
 <?php
 
-require_once 'vendor/autoload.php';
+require_once '../../../../../vendor/autoload.php';
 
 if(isset($_POST["id_token"])){
     $id_token=$_POST["id_token"];
