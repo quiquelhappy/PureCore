@@ -22,7 +22,8 @@ if(isset($id_token)){
       $given_name=$payload["given_name"];
       $family_name=$payload["family_name"];
 
-      $id=updateOwner($email,$given_name,$family_name);
+      $id=openssl_random_pseudo_bytes(16);
+      //$id=updateOwner($email,$given_name,$family_name);
 
       print(json_encode(array("id"=>$id,"email"=>$email,"given_name"=>$given_name,"family_name"=>$family_name)));
 
