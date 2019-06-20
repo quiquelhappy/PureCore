@@ -75,7 +75,7 @@ function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
 
     $.get("https://purecore.io/api/v/1/login/google?id_token="+id_token, function (data) {
-        alert("Data Loaded: " + data);
+        console.log(JSON.parse(data));
     });
 
 }
