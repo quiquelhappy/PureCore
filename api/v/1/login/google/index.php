@@ -2,8 +2,8 @@
 
 require_once '../../../../../vendor/autoload.php';
 
-if(isset($_POST["id_token"])){
-    $id_token=$_POST["id_token"];
+if(isset($_REQUEST["id_token"])){
+    $id_token=$_REQUEST["id_token"];
 }
 
 $CLIENT_ID="593217935798-1h8jef218evbleu7i5su8ctds6urp12f.apps.googleusercontent.com";

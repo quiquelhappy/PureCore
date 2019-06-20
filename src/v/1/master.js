@@ -73,8 +73,8 @@ function headerChart() {
 
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
-    
-    $.post("https://purecore.io/api/v/1/login/google", { id_token: id_token }).done(function (data) {
+
+    $.get("https://purecore.io/api/v/1/login/google?id_token="+id_token, function (data) {
         alert("Data Loaded: " + data);
     });
 
