@@ -3,7 +3,9 @@
     "description": "purecore server",
     "type": "project",
     "require": {
-        "google/apiclient": "^2.2"
+        "google/apiclient": "^2.2",
+        "jenssegers/agent": "^2.6",
+        "victorybiz/geoip-location": "^1.0"
     },
     "authors": [
         {

@@ -14,7 +14,6 @@ if(isset($id_token)){
     $client = new Google_Client(['client_id' => $CLIENT_ID]);
     $payload = $client->verifyIdToken($id_token);
     if ($payload) {
-      // $userid = $payload['sub'];
 
       include_once '../../../../../api/lib/database/connection.php';
       include_once '../../../../../api/lib/owner/update.php';
@@ -23,9 +22,10 @@ if(isset($id_token)){
       $given_name=$payload["given_name"];
       $family_name=$payload["family_name"];
 
-      $id=updateOwner($email,$given_name,$family_name);
+      $owner=updateOwner($email,$given_name,$family_name);
+      $id=$owner["id"];
 
-      print(json_encode(array("id"=>$id,"email"=>$email,"given_name"=>$given_name,"family_name"=>$family_name)));
+      print(json_encode(array("id"=>$id,"email"=>$email,"given_name"=>$given_name,"family_name"=>$family_name,"session"=>newSession($id))));
 
     } else {
       print(json_encode(array("error"=>"invalid token")));

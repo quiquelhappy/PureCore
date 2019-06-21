@@ -74,9 +74,13 @@ function headerChart() {
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
 
-    $.get("https://purecore.io/api/v/1/login/google?id_token="+id_token, function (data) {
-        console.log("pre-parsing: "+data);
-        console.log(JSON.parse(data));
+    $.get("https://purecore.io/api/v/1/login/google?id_token=" + id_token, function (data) {
+        console.log("[CORE] Started session #"+data.session.id);
+    });
+
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        console.log('[GOOGLE] Removed session data');
     });
 
 }

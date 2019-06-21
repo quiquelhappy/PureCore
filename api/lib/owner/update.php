@@ -16,8 +16,15 @@ function updateOwner($email, $name, $surname)
     if (empty($data)) {
         // register acc
 
-        $hash=$hash = bin2hex(random_bytes(32));
-        $id=$hash = bin2hex(random_bytes(8));
+        $id=bin2hex(random_bytes(8));
+        $hash=bin2hex(random_bytes(64));
+
+        $name=$name; //to-do detox
+        $surname=$surname; //to-do detox
+        $email=$email; //to-do detox
+
+        $sql = "INSERT INTO owners (`id`, `hash`, `name`, `surname`, `email`) VALUES ('$id', '$hash', '$name','$surname','$email')";
+        $conn->exec($sql);
         
         return $id;
 
@@ -26,8 +33,13 @@ function updateOwner($email, $name, $surname)
 
         $id=$data->id;
 
+        $name=$name; //to-do detox
+        $surname=$surname; //to-do detox
+        $email=$email; //to-do detox
+
         $sql = "UPDATE `owners` SET `email`='$email',`name`='$name',`surname`='$surname' WHERE `id`='$id'";
         $conn->exec($sql);
+
         return $id;
     }
 }
