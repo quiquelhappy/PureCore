@@ -4,7 +4,7 @@ function updateOwner($email, $name, $surname)
 {
     global $conn;
 
-    $sql = $conn->prepare("SELECT id FROM `owners` WHERE 'email' = :emailid");
+    $sql = $conn->prepare("SELECT id FROM `owners` WHERE email = :emailid");
     $sql->bindValue(":emailid", $email);
     $sql->execute();
     $data = $sql->fetch(PDO::FETCH_OBJ);
