@@ -1,7 +1,23 @@
 <?php
 
+// vendor
 require_once '../../../../../vendor/autoload.php';
+
+// conn
+include_once '../../../../../api/lib/database/connection.php';
+
+// owner
+include_once '../../../../../api/lib/owner/update.php';
+include_once '../../../../../api/lib/owner/get.php';
+
+// sessions
+include_once '../../../../../api/lib/session/new.php';
+
+
+// props
 header ('Content-type: text/html; charset=utf-8');
+
+// runtime
 
 if(isset($_REQUEST["id_token"])){
     $id_token=$_REQUEST["id_token"];
@@ -15,16 +31,11 @@ if(isset($id_token)){
     $payload = $client->verifyIdToken($id_token);
     if ($payload) {
 
-      include_once '../../../../../api/lib/database/connection.php';
-      include_once '../../../../../api/lib/owner/update.php';
-
       $email=$payload["email"];
       $given_name=$payload["given_name"];
       $family_name=$payload["family_name"];
 
       $id=updateOwner($email,$given_name,$family_name);
-
-      include_once '../../../../../api/lib/session/new.php';
 
       print(json_encode(array("id"=>$id,"email"=>$email,"given_name"=>$given_name,"family_name"=>$family_name,"session"=>newSession($id))));
 
