@@ -75,7 +75,8 @@ function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
 
     $.get("https://purecore.io/api/v/1/login/google?id_token=" + id_token, function (data) {
-        console.log("[CORE] Started session #"+data.session.id);
+        //console.log("[CORE] Started session #"+data.session.id);
+        console.log(data);
     });
 
     var auth2 = gapi.auth2.getAuthInstance();
