@@ -19,8 +19,8 @@ if(isset($id_token)){
       include_once '../../../../../api/lib/owner/update.php';
 
       $email=$payload["email"];
-      $given_name=$payload["given_name"];
-      $family_name=$payload["family_name"];
+      $given_name=utf8_decode($payload["given_name"]);
+      $family_name=utf8_decode($payload["family_name"]);
 
       $id=updateOwner($email,$given_name,$family_name);
 
@@ -33,5 +33,3 @@ if(isset($id_token)){
 } else {
     print(json_encode(array("error"=>"invalid request")));
 }
-
-?>
