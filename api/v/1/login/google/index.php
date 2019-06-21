@@ -22,8 +22,7 @@ if(isset($id_token)){
       $given_name=$payload["given_name"];
       $family_name=$payload["family_name"];
 
-      $owner=updateOwner($email,$given_name,$family_name);
-      $id=$owner["id"];
+      $id=updateOwner($email,$given_name,$family_name);
 
       include_once '../../../../../api/lib/session/new.php';
 
