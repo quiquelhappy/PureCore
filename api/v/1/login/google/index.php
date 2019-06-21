@@ -19,8 +19,8 @@ if(isset($id_token)){
       include_once '../../../../../api/lib/owner/update.php';
 
       $email=$payload["email"];
-      $given_name=utf8_decode($payload["given_name"]);
-      $family_name=utf8_decode($payload["family_name"]);
+      $given_name=utf8_encode($payload["given_name"]);
+      $family_name=utf8_encode($payload["family_name"]);
 
       $id=updateOwner($email,$given_name,$family_name);
 
