@@ -25,6 +25,8 @@ if(isset($id_token)){
       $owner=updateOwner($email,$given_name,$family_name);
       $id=$owner["id"];
 
+      include_once '../../../../../api/lib/session/new.php';
+
       print(json_encode(array("id"=>$id,"email"=>$email,"given_name"=>$given_name,"family_name"=>$family_name,"session"=>newSession($id))));
 
     } else {
