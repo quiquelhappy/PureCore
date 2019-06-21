@@ -1,6 +1,7 @@
 <?php
 
 require_once '../../../../../vendor/autoload.php';
+header ('Content-type: text/html; charset=utf-8');
 
 if(isset($_REQUEST["id_token"])){
     $id_token=$_REQUEST["id_token"];
