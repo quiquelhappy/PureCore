@@ -3,7 +3,7 @@
 function getOwner($id){
     global $conn;
 
-    $sql = $conn->prepare("SELECT id,name,surname,email FROM `owners` WHERE 'id' =:id");
+    $sql = $conn->prepare("SELECT id,name,surname,email FROM `owners` WHERE id =:id");
     $sql->bindValue(":id", $id);
     $sql->execute();
     $data = $sql->fetch(PDO::FETCH_OBJ);
