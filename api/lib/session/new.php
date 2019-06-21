@@ -1,9 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 use Jenssegers\Agent\Agent;
 
 $agent = new Agent();
@@ -41,7 +37,7 @@ function newSession($ownerid)
         $id=bin2hex(random_bytes(8));
         $hash = bin2hex(random_bytes(64));
         
-        $sql = "INSERT INTO sessions (`id`, `owner`, `device`, `platform`, `browser`,`languages`,`location`,`hash`,`ip`) VALUES ('$id', '$hash', '$device','$platform','$browser','$languages','$location','$hash','$ip')";
+        $sql = "INSERT INTO sessions (`id`, `owner`, `device`, `platform`, `browser`,`languages`,`location`,`hash`,`ip`) VALUES ('$id', '$ownerid', '$device','$platform','$browser','$languages','$location','$hash','$ip')";
         $conn->exec($sql);
 
         return array("id"=>$id,"hash"=>$hash);
