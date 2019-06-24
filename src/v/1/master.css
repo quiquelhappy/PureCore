@@ -74,9 +74,36 @@ body {
 
 .material_list li{
     width: 100%;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(255, 122, 82, 0.1);
     border-radius: 5px;
-    padding: 6px;
+    padding: 14px;
+    margin-bottom: 10px;
+    transition: 150ms;
+}
+
+.material_list li:hover{
+    width: 100%;
+    background-color: rgba(255, 122, 82, 0.2);
+    border-radius: 5px;
+    padding: 14px;
+    margin-bottom: 10px;
+}
+
+.material_list li:focus{
+    width: 100%;
+    background-color: rgba(255, 122, 82, 0.4);
+    border-radius: 5px;
+    padding: 14px;
+    margin-bottom: 10px;
+    transform: scale(1.03);
+}
+
+.material_list li .active{
+    width: 100%;
+    background-color: rgba(255, 122, 82, 0.3);
+    border-radius: 5px;
+    padding: 14px;
+    margin-bottom: 10px;
 }
 
 /* TO-DO */
