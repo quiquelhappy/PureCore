@@ -103,11 +103,12 @@ function checkSession() {
                 if(JSON.parse(data).success=true){
 
                     console.log("[CORE] Validated session")
-                    postSessionChecking()
+                    postSessionChecking(true)
 
                 } else {
 
                     console.log("[CORE] Invalid session")
+                    postSessionChecking(false)
                     localStorage.removeItem("session")
                     localStorage.removeItem("session_hash")
 
@@ -115,6 +116,7 @@ function checkSession() {
             } else {
 
                 console.log("[CORE] Invalid session. Error: "+JSON.parse(data).error)
+                postSessionChecking(false)
                 localStorage.removeItem("session")
                 localStorage.removeItem("session_hash")
 

@@ -86,7 +86,13 @@
 
     <!-- EJS -->
     <script>
-        // headerChart()
+        function postSessionChecking(success){
+            if(!success){
+                $("#contents").addClass("blur")
+                $("#modals").removeClass("hidden")
+                $("#modals").fadeIn(150)
+            }
+        }
     </script>
 </body>
 

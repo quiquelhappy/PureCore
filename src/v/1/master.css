@@ -50,6 +50,10 @@ body {
     border-color: #FF7B51;
 }
 
+.blur{
+    filter: blur(8px);
+}
+
 /* CONTAINERS */
 
 .login-popup{
