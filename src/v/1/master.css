@@ -66,4 +66,17 @@ body {
     z-index: 99;
 }
 
+.material_list{
+    padding: 16px;
+    width: 100%;
+    height: 100%;
+}
+
+.material_list li{
+    width: 100%;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 5px;
+    padding: 6px;
+}
+
 /* TO-DO */
