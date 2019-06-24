@@ -78,11 +78,11 @@
     <script>
         function postSessionChecking(success){
             if(!success){
-                console.log("[CORE] Post-login event: success")
+                console.log("[CORE] Post-login event: failed")
                 $("#contents").addClass("blur")
                 $("#modals").fadeIn(150)
             } else {
-                console.log("[CORE] Post-login event: failed")
+                console.log("[CORE] Post-login event: success")
                 $("#contents").removeClass("blur")
                 $("#modals").fadeOut(150)
             }
