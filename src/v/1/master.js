@@ -96,6 +96,7 @@ function checkSession() {
         localStorage.removeItem("session_hash")
 
         console.log("[CORE] Empty session or session hash")
+        postSessionChecking(false)
 
     } else {
         $.get("https://purecore.io/api/v/1/session/check?session=" + localStorage.getItem("session") +"&session_hash="+localStorage.getItem("session_hash"), function (data) {
