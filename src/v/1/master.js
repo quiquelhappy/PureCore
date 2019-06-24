@@ -75,12 +75,29 @@ function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
 
     $.get("https://purecore.io/api/v/1/login/google?id_token=" + id_token, function (data) {
-        console.log("[CORE] Started session #"+JSON.parse(data).session.id);
+        console.log("[CORE] Started session #" + JSON.parse(data).session.id);
+        localStorage.setItem('session', JSON.parse(data).session.id);
+        localStorage.setItem('session_hash', JSON.parse(data).session.hash);
     });
 
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
         console.log('[GOOGLE] Removed session data');
     });
-
 }
+
+function checkSession() {
+    if (localStorage.getItem("session") == null || localStorage.getItem("session_hash") == null) {
+        localStorage.removeItem("session")
+        localStorage.removeItem("session_hash")
+
+        console.log("[CORE] Empty session or session hash")
+    } else {
+        $.get("https://purecore.io/api/v/1/session/check?session=" + localStorage.getItem("session") +"&session_hash="+localStorage.getItem("session_hash"), function (data) {
+            console.log("[CORE] Started session #" + JSON.parse(data).session.id);
+            localStorage.setItem('session', JSON.parse(data).session.id);
+            localStorage.setItem('session_hash', JSON.parse(data).session.hash);
+        });
+    }
+}
+

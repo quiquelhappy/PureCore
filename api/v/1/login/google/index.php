@@ -1,18 +1,7 @@
 <?php
 
-// vendor
-require_once '../../../../../vendor/autoload.php';
-
-// conn
-include_once '../../../../../api/lib/database/connection.php';
-
-// owner
-include_once '../../../../../api/lib/owner/update.php';
-include_once '../../../../../api/lib/owner/get.php';
-
-// sessions
-include_once '../../../../../api/lib/session/new.php';
-
+// lib
+include_once($_SERVER['DOCUMENT_ROOT']."/api/lib/autoload.php");
 
 // props
 header ('Content-type: text/html; charset=utf-8');

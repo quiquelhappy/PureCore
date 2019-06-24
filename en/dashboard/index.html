@@ -16,52 +16,60 @@
 
     <!-- GHEAD -->
     <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="593217935798-1h8jef218evbleu7i5su8ctds6urp12f.apps.googleusercontent.com">
+    <meta name="google-signin-client_id"
+        content="593217935798-1h8jef218evbleu7i5su8ctds6urp12f.apps.googleusercontent.com">
 </head>
 
 <body>
 
-    <div class="login-popup valign-wrapper">
-        <div class="valign" style="width: 100%;">
-            <center>
-                <h3>Hey there!</h3>
-                <p class="flow-text">
-                    You need to login in order to use Core!
-                </p>
-                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="light"></div>
-            </center>
+    <div class="hidden" id="modals">
+        <div class="login-popup valign-wrapper">
+            <div class="valign" style="width: 100%;">
+                <center>
+                    <h3>Hey there!</h3>
+                    <p class="flow-text">
+                        You need to login in order to use Core!
+                    </p>
+                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="light"></div>
+                </center>
+            </div>
         </div>
     </div>
 
-    <div class="container">
-        <h3>Just your empty dashboard</h3>
-        <h5>:D</h5>
-        <h4>And the last one...</h4>
-    </div>
+    <div id="contents">
 
-    <footer class="page-footer accent">
         <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Pure Core</h5>
-                    <p class="grey-text text-lighten-4">The all-in-one solution for your Minecraft™ server.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="https://github.com/quiquelhappy">GitHub</a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://purecore.io/docs">Docs</a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://purecore.io/help">Support</a></li>
-                    </ul>
-                </div>
-            </div>
+            <h3>Just your empty dashboard</h3>
+            <h5>:D</h5>
+            <h4>And the last one...</h4>
         </div>
-        <div class="footer-copyright">
+
+        <footer class="page-footer accent">
             <div class="container">
-                © 2019 Pure Core
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Pure Core</h5>
+                        <p class="grey-text text-lighten-4">The all-in-one solution for your Minecraft™ server.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="https://github.com/quiquelhappy">GitHub</a>
+                            </li>
+                            <li><a class="grey-text text-lighten-3" href="https://purecore.io/docs">Docs</a></li>
+                            <li><a class="grey-text text-lighten-3" href="https://purecore.io/help">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2019 Pure Core
+                </div>
+            </div>
+        </footer>
+
+    </div>
 
 
 
