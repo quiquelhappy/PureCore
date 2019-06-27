@@ -7,8 +7,9 @@ include_once($_SERVER['DOCUMENT_ROOT']."/vendor/autoload.php");
 include_once 'database/connection.php';
 
 // owner
-include_once 'owner/update.php';
 include_once 'owner/get.php';
+include_once 'owner/servers.php';
+include_once 'owner/update.php';
 
 // sessions
 include_once 'session/check.php';

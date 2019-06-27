@@ -42,12 +42,13 @@
                                     <label for="tutorial_server_name">Server Name</label>
                                 </div>
                                 <div class="input-field col m9 s12">
-                                    <input oninput="checkTutorialInputIP()" placeholder="Server IP" id="tutorial_server_ip" type="text">
+                                    <input oninput="checkTutorialInputIP()" placeholder="Server IP"
+                                        id="tutorial_server_ip" type="text">
                                     <label for="tutorial_server_ip">Server IP</label>
                                 </div>
                                 <div class="input-field col m3 s12">
-                                    <input oninput="checkTutorialInputIP()" value="25565" placeholder="Server Port" id="tutorial_server_port"
-                                        type="number">
+                                    <input oninput="checkTutorialInputIP()" value="25565" placeholder="Server Port"
+                                        id="tutorial_server_port" type="number">
                                     <label for="tutorial_server_port">Server Port</label>
                                 </div>
                             </div>
@@ -55,7 +56,8 @@
 
                             </div>
                             <div>
-                                <a onclick="createServer()" id="tutorial_server_add" class="cbutton btn waves-effect waves-dark hidden">Add
+                                <a onclick="createServer()" id="tutorial_server_add"
+                                    class="cbutton btn waves-effect waves-dark hidden">Add
                                     Server</a>
                             </div>
                         </div>
@@ -175,6 +177,40 @@
             }
         }
 
+        function createServer() {
+            session = localStorage.getItem("session")
+            session_hash = localStorage.getItem("session_hash")
+            name = $("#tutorial_server_name").val()
+            ip = $("#tutorial_server_ip").val()
+            port = $("#tutorial_server_port").val()
+
+            $.get("https://purecore.io/api/v/1/server/create?session=" + session + "&session_hash=" + session_hash + "&name=" + name + "&ip=" + ip + "&port=" + port, function (data) {
+                if (JSON.parse(data).error == null) {
+                    if (JSON.parse(data).uuid == null) {
+
+                        M.toast({ html: 'Created server instance #' + JSON.parse(data).uuid })
+                        setTimeout(() => {
+                            location.reload();
+                        }, 300);
+
+                    } else {
+
+                        $("#server_add_error").fadeIn(100)
+                        $("#server_add_error").removeClass("hidden")
+                        $("#server_add_error").html("Unknown error")
+
+                    }
+                } else {
+
+                    $("#server_add_error").fadeIn(100)
+                    $("#server_add_error").removeClass("hidden")
+                    $("#server_add_error").html(JSON.parse(data).error)
+
+                }
+            });
+
+        }
+
         function checkTutorialInputIP() {
             ip = $("#tutorial_server_ip").val()
             port = $("#tutorial_server_port").val()
@@ -186,7 +222,7 @@
                         console.log("[CORE] The IP is valid")
                         $("#tutorial_server_add").fadeIn(100)
                         $("#tutorial_server_add").removeClass("hidden")
-                        $("#tutorial_server_add").css("display","inline-block")
+                        $("#tutorial_server_add").css("display", "inline-block")
                         $("#server_add_error").fadeOut(100)
 
                     } else {
@@ -209,10 +245,6 @@
             $("#contents").addClass("blur")
             $("#tutorialmodal").removeClass("hidden")
             $("#tutorialmodal").fadeIn(150)
-        }
-
-        function createServer(){
-            
         }
     </script>
 
