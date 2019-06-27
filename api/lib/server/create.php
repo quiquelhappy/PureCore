@@ -22,8 +22,8 @@ function createServer($name, $ip, $port, $owner)
 
                 $ip_numerical=gethostbyname($ip);
 
-                $sql = $conn->prepare("SELECT name FROM `servers` WHERE name =:name AND owner = :owner");
-                $sql->bindValue(":name", $name);
+                $sql = $conn->prepare("SELECT ip FROM `servers` WHERE ip =:ip AND owner = :owner");
+                $sql->bindValue(":ip", $ip);
                 $sql->bindValue(":owner", $owner);
                 $sql->execute();
                 $data = $sql->fetch(PDO::FETCH_OBJ);
