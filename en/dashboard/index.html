@@ -210,7 +210,7 @@
 
             $.get("https://purecore.io/api/v/1/server/create?session=" + session + "&session_hash=" + session_hash + "&name=" + name + "&ip=" + ip + "&port=" + port, function (data) {
                 if (JSON.parse(data).error == null) {
-                    if (JSON.parse(data).uuid == null) {
+                    if (JSON.parse(data).uuid != null) {
 
                         M.toast({ html: 'Created server instance #' + JSON.parse(data).uuid })
                         setTimeout(() => {
