@@ -21,7 +21,7 @@ if (isset($id) && isset($hash)) {
         $owner = getSession($id);
         $servers = getOwnerServers($owner);
 
-        print(json_encode($servers));
+        print(json_encode(array("servers"=>$servers)));
 
     } else {
         print(json_encode(array("error" => "invalid credentials")));
