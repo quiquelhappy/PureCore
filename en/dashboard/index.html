@@ -24,7 +24,7 @@
 
     <div id="modals">
 
-        <div class="valign-wrapper">
+        <div id="tutorialmodal" class="login-popup valign-wrapper hidden">
             <div class="valign" style="width: 100%;">
                 <center>
                     <h3>Welcome!</h3>
@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <div class="login-popup valign-wrapper hidden">
+        <div id="loginmodal" class="login-popup valign-wrapper hidden">
             <div class="valign" style="width: 100%;">
                 <center>
                     <h3>Hey there!</h3>
@@ -144,12 +144,17 @@
             if (!success) {
                 console.log("[CORE] Post-login event: failed")
                 $("#contents").addClass("blur")
-                $("#login-popup").fadeIn(150)
+                $("#loginmodal").fadeIn(150)
             } else {
                 console.log("[CORE] Post-login event: success")
                 $("#contents").removeClass("blur")
-                $("#login-popup").fadeOut(150)
+                $("#loginmodal").fadeOut(150)
             }
+        }
+
+        function showTutorial() {
+            $("#contents").addClass("blur")
+            $("#tutorialmodal").fadeIn(150)
         }
     </script>
 
