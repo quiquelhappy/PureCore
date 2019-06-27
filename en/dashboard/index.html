@@ -144,6 +144,7 @@
             if (!success) {
                 console.log("[CORE] Post-login event: failed")
                 $("#contents").addClass("blur")
+                $("#loginmodal").removeClass("hidden")
                 $("#loginmodal").fadeIn(150)
             } else {
                 console.log("[CORE] Post-login event: success")
@@ -154,6 +155,7 @@
 
         function showTutorial() {
             $("#contents").addClass("blur")
+            $("#tutorialmodal").removeClass("hidden")
             $("#tutorialmodal").fadeIn(150)
         }
     </script>
