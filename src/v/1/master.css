@@ -20,6 +20,19 @@ body {
     color: #FF7B51;
 }
 
+.cbutton {
+    text-transform: capitalize;
+    background-color: #FF7B51;
+    color: white;
+    border-radius: 4px;
+    transition: 150ms;
+}
+
+.cbutton:hover{
+    background-color: #FFF1ED;
+    color: #FF7B51;
+}
+
 /* UTILS */
 
 .flex {
@@ -50,28 +63,28 @@ body {
     border-color: #FF7B51;
 }
 
-.blur{
+.blur {
     filter: blur(8px);
 }
 
 /* CONTAINERS */
 
-.login-popup{
+.login-popup {
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     z-index: 99;
 }
 
-.material_list{
+.material_list {
     width: 100%;
     margin-bottom: 15px;
 }
 
-.material_list li{
+.material_list li {
     width: 100%;
     background-color: rgba(255, 122, 82, 0.1);
     border-radius: 5px;
@@ -80,7 +93,7 @@ body {
     transition: 150ms;
 }
 
-.material_list li:hover{
+.material_list li:hover {
     width: 100%;
     background-color: rgba(255, 122, 82, 0.2);
     border-radius: 5px;
@@ -88,7 +101,7 @@ body {
     margin-bottom: 10px;
 }
 
-.material_list li:focus{
+.material_list li:focus {
     width: 100%;
     background-color: rgba(255, 122, 82, 0.4);
     border-radius: 5px;
@@ -97,7 +110,7 @@ body {
     transform: scale(1.01);
 }
 
-.material_list li .active{
+.material_list li .active {
     width: 100%;
     background-color: rgba(255, 122, 82, 0.3);
     border-radius: 5px;
