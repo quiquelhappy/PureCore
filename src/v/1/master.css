@@ -22,15 +22,15 @@ body {
 
 .cbutton {
     text-transform: capitalize;
-    background-color: #FF7B51;
-    color: white;
+    background-color: #FFF1ED;
+    color: #FF7B51;
     border-radius: 4px;
     transition: 150ms;
 }
 
 .cbutton:hover{
-    background-color: #FFF1ED;
-    color: #FF7B51;
+    background-color: #FF7B51;
+    color: white;
 }
 
 /* UTILS */
