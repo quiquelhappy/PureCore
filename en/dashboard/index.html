@@ -184,7 +184,7 @@
             session = localStorage.getItem("session")
             session_hash = localStorage.getItem("session_hash")
 
-            $.get("https://purecore.io/api/v/1/owner/server/list" + session + "&session_hash=" + session_hash, function (data) {
+            $.get("https://purecore.io/api/v/1/owner/server/list?" + session + "&session_hash=" + session_hash, function (data) {
                 if (JSON.parse(data).error == null) {
 
                     if (JSON.parse(data).servers.length <= 0) {
