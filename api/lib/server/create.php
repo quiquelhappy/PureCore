@@ -20,6 +20,8 @@ function createServer($name, $ip, $port, $owner)
 
             if (pingServer($ip, $port)) {
 
+                $ip_numerical=gethostbyname($ip);
+
                 $sql = $conn->prepare("SELECT name FROM `servers` WHERE name =:name AND owner = :owner");
                 $sql->bindValue(":name", $name);
                 $sql->bindValue(":owner", $owner);
@@ -32,7 +34,7 @@ function createServer($name, $ip, $port, $owner)
 
                     $port = intval($port);
 
-                    $sql = "INSERT INTO servers (`id`, `name`, `ip`, `port`, `owner`) VALUES ('$id', '$name', '$ip','$port','$owner')";
+                    $sql = "INSERT INTO servers (`id`, `name`, `ip`, `ip_numerical`, `port`, `owner`) VALUES ('$id', '$name', '$ip', '$ip_numerical', '$port','$owner')";
                     $conn->exec($sql);
 
                     return $id; // all ok
