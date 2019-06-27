@@ -51,7 +51,7 @@
                                     <label for="tutorial_server_port">Server Port</label>
                                 </div>
                             </div>
-                            <div class="light hidden" id="server_add_error">
+                            <div class="light hidden" id="server_add_error" style="padding: 10px; border-radius: 6px">
 
                             </div>
                             <div>
@@ -185,6 +185,7 @@
 
                         console.log("[CORE] The IP is valid")
                         $("#tutorial_server_add").fadeIn(100)
+                        $("#tutorial_server_add").removeClass("hidden")
                         $("#server_add_error").fadeOut(100)
 
                     } else {
