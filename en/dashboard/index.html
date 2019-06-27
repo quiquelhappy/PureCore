@@ -177,7 +177,7 @@
 
         function checkTutorialInputIP() {
             ip = $("#tutorial_server_ip").val()
-            port = $("#tutorial_server_ip").val()
+            port = $("#tutorial_server_port").val()
 
             $.get("https://purecore.io/api/v/1/server/ping?ip=" + ip + "&port=" + port, function (data) {
                 if (JSON.parse(data).error == null) {
