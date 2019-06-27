@@ -13,3 +13,6 @@ include_once 'owner/get.php';
 // sessions
 include_once 'session/new.php';
 include_once 'session/check.php';
+
+// servers
+include_once 'server/ping.php';
