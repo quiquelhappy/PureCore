@@ -174,7 +174,31 @@
                 console.log("[CORE] Post-login event: success")
                 $("#contents").removeClass("blur")
                 $("#loginmodal").fadeOut(150)
+
+                checkTutorialMin()
             }
+        }
+
+        function checkTutorialMin() {
+
+            session = localStorage.getItem("session")
+            session_hash = localStorage.getItem("session_hash")
+
+            $.get("https://purecore.io/api/v/1/owner/server/list" + session + "&session_hash=" + session_hash, function (data) {
+                if (JSON.parse(data).error == null) {
+
+                    if (JSON.parse(data).servers.length <= 0) {
+
+                        showTutorial();
+
+                    }
+
+                } else {
+
+                    console.log("[CORE] Error while getting existing server list: "+JSON.parse(data).error)
+
+                }
+            });
         }
 
         function createServer() {
