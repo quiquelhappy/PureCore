@@ -22,8 +22,28 @@
 
 <body>
 
-    <div class="hidden" id="modals">
-        <div class="login-popup valign-wrapper">
+    <div id="modals">
+
+        <div class="valign-wrapper">
+            <div class="valign" style="width: 100%;">
+                <center>
+                    <h3>Welcome!</h3>
+                    <p class="flow-text">
+                        Let's add your first server
+                    </p>
+                    <div class="input-field">
+                        <input placeholder="Server Name" id="tutorial_server_name" type="text">
+                        <label for="tutorial_server_name">Server Name</label>
+                    </div>
+                    <div class="input-field">
+                        <input placeholder="Server Name" id="tutorial_server_ip" type="text">
+                        <label for="tutorial_server_ip">Server IP</label>
+                    </div>
+                </center>
+            </div>
+        </div>
+
+        <div class="login-popup valign-wrapper hidden">
             <div class="valign" style="width: 100%;">
                 <center>
                     <h3>Hey there!</h3>
@@ -38,7 +58,7 @@
 
     <div id="contents">
 
-        <div class="row">
+        <div class="row" style="margin: 0px;">
             <div class="col l2 m3 s0 hide-on-small-only z-depth-1">
 
                 <p class="flow-text">
@@ -78,11 +98,8 @@
 
             </div>
             <div class="col l10 m9 s12">
-                <div class="container">
-                    <h3>Just your empty dashboard</h3>
-                    <h5>:D</h5>
-                    <h4>And the last one...</h4>
-                </div>
+
+                <iframe id="mod" src="mod/welcome" style="width: 100%" frameborder="0"></iframe>
 
                 <footer class="page-footer accent">
                     <div class="container">
@@ -127,11 +144,11 @@
             if (!success) {
                 console.log("[CORE] Post-login event: failed")
                 $("#contents").addClass("blur")
-                $("#modals").fadeIn(150)
+                $("#login-popup").fadeIn(150)
             } else {
                 console.log("[CORE] Post-login event: success")
                 $("#contents").removeClass("blur")
-                $("#modals").fadeOut(150)
+                $("#login-popup").fadeOut(150)
             }
         }
     </script>
