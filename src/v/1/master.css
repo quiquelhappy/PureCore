@@ -91,23 +91,17 @@ body {
     padding: 14px;
     margin-bottom: 10px;
     transition: 150ms;
+    outline: none !important;
 }
 
 .material_list li:hover {
-    width: 100%;
     background-color: rgba(255, 122, 82, 0.2);
-    border-radius: 5px;
-    padding: 14px;
-    margin-bottom: 10px;
+    outline: none !important;
 }
 
 .material_list li:focus {
-    width: 100%;
     background-color: rgba(255, 122, 82, 0.4);
-    border-radius: 5px;
-    padding: 14px;
-    margin-bottom: 10px;
-    transform: scale(1.01);
+    outline: none !important;
 }
 
 .material_list li .active {
